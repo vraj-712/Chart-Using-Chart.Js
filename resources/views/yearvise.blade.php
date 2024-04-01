@@ -51,7 +51,7 @@
                               beginAtZero:true,
                           }
                       }
-                  }
+                  },
               })
             }
         });

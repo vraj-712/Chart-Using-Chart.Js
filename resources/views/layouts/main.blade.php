@@ -11,10 +11,10 @@
 </head>
 <body>
   <div class="container-fluid row mx-0 p-0">
-    <div class="col-3 position-fixed h-100">
+    <div class="col-2 position-fixed h-100 m-0 p-0">
       @include('layouts.sidebar')
     </div>
-    <div class="col-9 position-absolute end-0 h-100">
+    <div class="col-10 position-absolute end-0 h-100">
       @yield('content')
     </div>
   </div>

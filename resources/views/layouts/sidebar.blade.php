@@ -7,14 +7,17 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item my-2">
         <a href="/" class="nav-link active" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Home
+          <p class="m-0 p-0">Home</p>
         </a>
       </li>
       <li class="nav-item my-2">
         <a href="/yearchart" class="nav-link active" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Year
+          <p class="m-0 p-0" >Year</p>
+        </a>
+      </li>
+      <li class="nav-item my-2">
+        <a href="/monthchart" class="nav-link active" aria-current="page">
+          <p class="m-0 p-0">Month</p>
         </a>
       </li>
     </ul>

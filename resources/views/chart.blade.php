@@ -74,7 +74,8 @@
           fetchAuthor();
           loadData();
           function createChart(data,type){
-              let ctx = $('#myChart')
+            const canvas = document.getElementById('myChart'); // Replace 'chart' with your canvas ID
+            const ctx = canvas.getContext('2d');
               let chartStatus = Chart.getChart("myChart"); // <canvas> id
               if (chartStatus != undefined) {
               chartStatus.destroy();
@@ -101,9 +102,10 @@
                       }
                   }
 
-              })
+              });}
+
               
-          }
+          
           $('input[name="charttype"]').change(function (e) { 
               e.preventDefault();
               type = $("input[name='charttype']:checked").val();
@@ -120,7 +122,7 @@
           $('#author').change(function(){
               authorId = $(this).val();
               loadData();
-          })
+          });
           // Getting All Author
           function fetchAuthor(){
               $.ajax({
