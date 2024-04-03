@@ -29,12 +29,14 @@ class SportController extends Controller
 
             $labels = array_keys($data);
             $value = array_values($data);
+
             if(!$value){
                 return response()->json([
                     'label' => $labels,
                     'value' => $value,
                     ]);
             }
+
             $maxValuePercentage = max($value)/100;
             $sum = 0;
             foreach ($value as $key => $total) {
