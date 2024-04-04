@@ -10,7 +10,7 @@
           <p class="m-0 p-0">Home</p>
         </a>
       </li>
-      <li class="nav-item my-2">
+      {{-- <li class="nav-item my-2">
         <a href="/yearchart" class="nav-link active" aria-current="page">
           <p class="m-0 p-0" >Year</p>
         </a>
@@ -18,6 +18,11 @@
       <li class="nav-item my-2">
         <a href="/monthchart" class="nav-link active" aria-current="page">
           <p class="m-0 p-0">Month</p>
+        </a>
+      </li> --}}
+      <li class="nav-item my-2">
+        <a href="/monthyearchart" class="nav-link active" aria-current="page">
+          <p class="m-0 p-0">Chart</p>
         </a>
       </li>
     </ul>

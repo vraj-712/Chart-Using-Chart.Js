@@ -10,15 +10,7 @@
             @endforeach
         </select>
     </div>
-    {{-- <div class="form-group container my-2">
-        <select name="sport" id="sport" class="form-control">
-            <option value="{{null}}">Select Sport</option>
-            @foreach ($sports as $sport)
-                <option value="{{$sport}}" id="{{$sport}}">{{$sport}}</option>
-            @endforeach
-        </select>
-    </div> --}}
-   
+
     <div class="container-fluid mx-auto">
         <canvas id="myChart"></canvas>
     </div>
@@ -29,7 +21,7 @@
             
                     <!-- Modal Header -->
                     <div class="modal-header justify-content-center">
-                        <h4 class="modal-title  ">Pie Chart</h4>
+                        <h4 class="modal-title" >Pie Chart</h4>
                     </div>
                     <!-- Modal Body -->
                     <div class="modal-body">

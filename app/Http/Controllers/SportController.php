@@ -184,4 +184,49 @@ class SportController extends Controller
                 'values' => $value,
             ]); 
     }
+
+    public function monthyearview(){
+        $years = Asset::selectRaw('YEAR(published_date) as year')
+        ->whereNotNull('published_date')
+        ->groupBy('year')
+        ->orderBy('year')
+        ->pluck('year');
+        $monthsIndex = Asset::selectRaw('MONTH(published_date) as month')
+        ->whereNotNull('published_date')
+        ->groupBy('month')
+        ->orderBy('month')
+        ->pluck('month')->toArray();
+        $monthsName = [];
+        foreach ($monthsIndex as $value) {
+            $monthsName[$value] = Carbon::create()->month($value)->format('F');
+        }
+
+        return view('monthyearvise',compact(['years', 'monthsName']));
+    }
+    public function yearMonthData(Request $request){
+        $data = Asset::select(DB::raw('DATE(published_date) as date, count(*) as total'))
+            ->whereNotNull('published_date')
+            ->where('sport', '<>', '')
+            ->whereNotNull('sport')
+            ->whereMonth('published_date', $request->month)
+            ->whereYear('published_date', $request->year)
+            ->groupBy('date')
+            ->pluck('total', 'date');
+            return response()->json([
+                'status' => 200,
+                'data' => $data
+            ]);
+    }
+    public function dateChart(Request $request){
+        $data = Asset::select('sport',DB::raw('count(*) as total'))
+            ->whereDate('published_date', $request->date)
+            ->where('sport', '<>', '')
+            ->whereNotNull('sport')
+            ->groupBy('sport')
+            ->pluck('total', 'sport');
+            return response()->json([
+                'status' => 200,
+                'data' => $data
+            ]);
+    }
 }
